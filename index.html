@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16181c">
+  <meta name="description" content="Play Flappy Bird in your browser. No installs, no frameworks.">
+  <title>Flappy Bird</title>
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./game.mjs"></script>
+</head>
+<body>
+  <main class="page">
+    <section class="arcade" aria-label="Flappy Bird game">
+      <div class="game-frame" id="game-frame">
+        <canvas id="game" width="360" height="640" aria-label="Flappy Bird play field. Tap or press Space to flap.">
+          Your browser needs HTML5 Canvas to play.
+        </canvas>
+
+        <div class="overlay" id="start-overlay">
+          <img class="message-art" src="./assets/images/message.png" width="184" height="267" alt="Flappy Bird. Tap to fly past the pipes.">
+          <button class="pixel-button" id="start-button" type="button">START GAME</button>
+        </div>
+
+        <div class="overlay" id="gameover-overlay" hidden>
+          <div class="end-panel">
+            <img src="./assets/images/gameover.png" width="192" height="42" alt="Game Over">
+            <div class="results">
+              <div><span>SCORE</span><strong id="final-score">0</strong></div>
+              <div><span>BEST</span><strong id="best-score">0</strong></div>
+            </div>
+            <button class="pixel-button" id="restart-button" type="button">PLAY AGAIN</button>
+          </div>
+        </div>
+
+        <div class="overlay" id="error-overlay" hidden>
+          <div class="end-panel"><p>Game assets could not be loaded.</p><button class="pixel-button" id="retry-button" type="button">RETRY</button></div>
+        </div>
+      </div>
+      <p class="hint">Tap / Click / Space to flap</p>
+    </section>
+    <footer><a href="https://github.com/ilkerozgedik/flappy-bird" target="_blank" rel="noopener noreferrer">Source on GitHub</a><span aria-hidden="true">·</span><span>Made by ilkerozgedik</span></footer>
+  </main>
+</body>
+</html>
